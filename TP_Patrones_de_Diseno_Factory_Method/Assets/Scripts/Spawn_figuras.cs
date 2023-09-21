@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Spawn_figuras : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Factory_Figuras _factoryFiguras;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetButtonUp("Key_1"))
+        {
+            _factoryFiguras.create_figure("cubo");
+        }
+        if (Input.GetButtonUp("Key_2"))
+        {
+            _factoryFiguras.create_figure("esfera");
+        }
     }
 }

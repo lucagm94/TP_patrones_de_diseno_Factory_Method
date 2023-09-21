@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Factory_figuras : MonoBehaviour
+public class Factory_Figuras : MonoBehaviour
 {
-    [SerializeField] private Figuras figura; 
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Figuras cubo;
+    [SerializeField] private Figuras esfera;
 
-    // Update is called once per frame
-    void Update()
+    public void create_figure(string id)
     {
-        
+        if (id == "cubo")
+        {
+            Instantiate(cubo);
+        }
+        if (id == "esfera")
+        {
+            Instantiate(esfera);
+        }
     }
 }
