@@ -12,7 +12,7 @@ public class Spawn_figuras : MonoBehaviour
         {
             _factoryFiguras.create_figure("cubo");
         }
-        if (Input.GetKey(KeyCode.Alpha2))
+        else if (Input.GetKey(KeyCode.Alpha2))
         {
             _factoryFiguras.create_figure("esfera");
         }
