@@ -1,21 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Factory_Figuras : MonoBehaviour
 {
-    [SerializeField] private Figuras cubo;
-    [SerializeField] private Figuras esfera;
+    //Se crea lista para almacenar los objetos que van a ir en el diccionario
+    [SerializeField] private Figuras[] listaFiguras; 
+    //se crea diccionario
+    private Dictionary<string, Figuras> diccionarioFiguras;
 
-    public Figuras create_figure(string id)
+    private void Awake()
     {
-        switch (id)
+        
+        diccionarioFiguras = new Dictionary<string, Figuras>();
+        //Se cargan los valores de id para referir a la key y el objeto como valor
+        foreach (var fig in listaFiguras)
         {
-            case "cubo":
-                return Instantiate(cubo);
-            case "esfera":
-                return Instantiate(esfera);
-            default: return null;
+            diccionarioFiguras.Add(fig.id, fig);
         }
     }
 }
