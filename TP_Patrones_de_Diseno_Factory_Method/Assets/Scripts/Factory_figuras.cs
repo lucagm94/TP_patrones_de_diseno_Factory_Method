@@ -24,7 +24,7 @@ public class Factory_Figuras : MonoBehaviour
     public Figuras create_figure(string id)
     {
         diccionarioFiguras.TryGetValue(id, out var nuevaFigura);
-        return nuevaFigura;
+        return Instantiate(nuevaFigura);
         
     }
 
