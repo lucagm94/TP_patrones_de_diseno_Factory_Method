@@ -20,4 +20,13 @@ public class Factory_Figuras : MonoBehaviour
             diccionarioFiguras.Add(fig.id, fig);
         }
     }
+  
+    public Figuras create_figure(string id)
+    {
+        diccionarioFiguras.TryGetValue(id, out var nuevaFigura);
+        return nuevaFigura;
+        
+    }
+
+    
 }
