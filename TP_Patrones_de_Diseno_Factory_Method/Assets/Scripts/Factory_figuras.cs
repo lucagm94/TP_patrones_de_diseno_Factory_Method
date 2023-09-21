@@ -7,15 +7,15 @@ public class Factory_Figuras : MonoBehaviour
     [SerializeField] private Figuras cubo;
     [SerializeField] private Figuras esfera;
 
-    public void create_figure(string id)
+    public Figuras create_figure(string id)
     {
-        if (id == "cubo")
+        switch (id)
         {
-            Instantiate(cubo);
-        }
-        if (id == "esfera")
-        {
-            Instantiate(esfera);
+            case "cubo":
+                return Instantiate(cubo);
+            case "esfera":
+                return Instantiate(esfera);
+            default: return null;
         }
     }
 }

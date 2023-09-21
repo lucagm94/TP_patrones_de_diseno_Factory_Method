@@ -2,17 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Figuras : MonoBehaviour
+public abstract class Figuras : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private string _id;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string id => _id;
 }

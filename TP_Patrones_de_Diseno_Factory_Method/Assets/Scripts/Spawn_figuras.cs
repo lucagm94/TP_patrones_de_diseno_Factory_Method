@@ -8,11 +8,11 @@ public class Spawn_figuras : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonUp("Key_1"))
+        if (Input.GetKey(KeyCode.Alpha1))
         {
             _factoryFiguras.create_figure("cubo");
         }
-        if (Input.GetButtonUp("Key_2"))
+        if (Input.GetKey(KeyCode.Alpha2))
         {
             _factoryFiguras.create_figure("esfera");
         }
